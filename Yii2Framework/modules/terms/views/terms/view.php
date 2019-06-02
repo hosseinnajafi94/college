@@ -22,15 +22,18 @@ $this->params['breadcrumbs'][] = $model->name;
                     'name',
                     [
                         'attribute' => 'book_id',
-                        'pattern'   => '{name}'
+                        'pattern'   => '{name}',
+                        'url'       => ['/terms/terms-books-list/view', 'id' => '{id}']
                     ],
                     [
                         'attribute' => 'teacher_id',
-                        'pattern'   => '{fname} {lname}'
+                        'pattern'   => '{fname} {lname}',
+                        'url'       => ['/users/users/view', 'id' => '{id}']
                     ],
                     [
                         'attribute' => 'class_id',
-                        'pattern'   => '{title}'
+                        'pattern'   => '{title}',
+                        'url'       => ['/terms/terms-classes-list/view', 'id' => '{id}']
                     ],
                     // 'status_id',
                     'teacher_price:toman',

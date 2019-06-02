@@ -11,7 +11,7 @@ class TermsStudentsVML extends Model {
     public $book_price;
     public $terms = [];
     public $students = [];
-    private $_model;
+    public $model;
     public function rules() {
         return [
                 [['term_id', 'student_id', 'register_date', 'class_price', 'book_price'], 'required'],
@@ -33,11 +33,5 @@ class TermsStudentsVML extends Model {
             'class_price' => Yii::t('app', 'Toman'),
             'book_price' => Yii::t('app', 'Toman'),
         ];
-    }
-    public function setModel($model) {
-        $this->_model = $model;
-    }
-    public function getModel() {
-        return $this->_model;
     }
 }

@@ -21,15 +21,18 @@ $this->params['breadcrumbs'][] = $student->fname . ' ' . $student->lname;
                 'attributes' => [
                     [
                         'attribute' => 'term_id',
-                        'pattern'   => '{name}'
+                        'pattern'   => '# {id} / {name}',
+                        'url' => ['/terms/terms/view', 'id' => '{id}']
                     ],
                     [
                         'attribute' => 'student_id',
-                        'pattern'   => '{fname} {lname}'
+                        'pattern'   => '# {id} / {fname} {lname}',
+                        'url' => ['/users/users/view', 'id' => '{id}']
                     ],
                     'register_date:jdate',
                     'class_price:toman',
                     'book_price:toman',
+                    'total_price:toman',
                 ],
             ]) ?>
         </div>

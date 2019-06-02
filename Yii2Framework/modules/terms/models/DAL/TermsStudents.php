@@ -12,6 +12,7 @@ use app\modules\users\models\DAL\Users;
  * @property string $register_date
  * @property int $class_price
  * @property int $book_price
+ * @property int $total_price
  *
  * @property TermsMeetingsAbsenteeism[] $termsMeetingsAbsenteeisms
  * @property Terms $term
@@ -23,9 +24,10 @@ class TermsStudents extends \yii\db\ActiveRecord {
     }
     public function rules() {
         return [
-                [['term_id', 'student_id', 'register_date', 'class_price', 'book_price'], 'required'],
-                [['term_id', 'student_id', 'class_price', 'book_price'], 'integer'],
+                [['term_id', 'student_id', 'register_date', 'class_price', 'book_price', 'total_price'], 'required'],
+                [['term_id', 'student_id', 'class_price', 'book_price', 'total_price'], 'integer'],
                 [['register_date'], 'safe'],
+                [['term_id', 'student_id'], 'unique', 'targetAttribute' => ['term_id', 'student_id']],
                 [['term_id'], 'exist', 'skipOnError' => true, 'targetClass' => Terms::className(), 'targetAttribute' => ['term_id' => 'id']],
                 [['student_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['student_id' => 'id']],
         ];
@@ -38,6 +40,7 @@ class TermsStudents extends \yii\db\ActiveRecord {
             'register_date' => Yii::t('terms', 'Register Date'),
             'class_price' => Yii::t('terms', 'Class Price'),
             'book_price' => Yii::t('terms', 'Book Price'),
+            'total_price' => Yii::t('terms', 'Total Price'),
         ];
     }
     /**

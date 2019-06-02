@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = Yii::t('terms', 'Terms');
                     'term_price:toman',
                     'book_price:toman',
                     'total_price:toman',
-                    ['class' => 'yii\grid\ActionColumn'],
+                    ['class' => 'app\config\widgets\ActionColumn'],
                 ],
             ]) ?>
         </div>

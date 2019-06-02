@@ -169,7 +169,9 @@ class TermsSRL implements SRL {
      */
     public static function getItems() {
         $models = self::getModels();
-        return ArrayHelper::map($models, 'id', 'name');
+        return ArrayHelper::map($models, 'id', function ($model) {
+            return "# $model->id / $model->name";
+        });
     }
     /**
      * @param int $id

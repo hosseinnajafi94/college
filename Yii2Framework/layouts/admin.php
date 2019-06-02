@@ -95,6 +95,21 @@ $this->beginPage();
                 </div>
             </div>
         </div>
+        <div id="modelIndex0" class="modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header white" style="background: #1bbc9b;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <a class="back"><i class="fa fa-fw fa-arrow-right"></i></a>
+                        <span></span>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer bg-white" style="padding: 8px 15px;text-align: right;">
+                        <a class="btn btn-sm btn-warning" data-dismiss="modal"><?= Yii::t('app', 'Close') ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php $this->endBody() ?>
     </body>
 </html>
